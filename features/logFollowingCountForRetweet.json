@@ -1,0 +1,10 @@
+[
+  {
+    "name" : "logFollowingCountForRetweet",
+    "class" : "org.apache.solr.ltr.feature.SolrFeature",
+    "params" : {
+      "q" : "{!func}log(following_count)",
+      "fq" : [ "retweet_source:*" ]
+    }
+  }
+]

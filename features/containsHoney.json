@@ -1,0 +1,9 @@
+[
+  {
+    "name" : "containsHoney",
+    "class" : "org.apache.solr.ltr.feature.SolrFeature",
+    "params" : {
+      "fq" : [ "tweet:honey" ]
+    }
+  }
+]

@@ -1,0 +1,9 @@
+[
+  {
+    "name" : "containsMention",
+    "class" : "org.apache.solr.ltr.feature.SolrFeature",
+    "params" : {
+      "fq" : [ "mention:*" ]
+    }
+  }
+]

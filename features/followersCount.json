@@ -1,0 +1,9 @@
+[
+  {
+    "name" : "followersCount",
+    "class" : "org.apache.solr.ltr.feature.SolrFeature",
+    "params" : {
+      "q" : "{!func}field(followers_count)"
+    }
+  }
+]

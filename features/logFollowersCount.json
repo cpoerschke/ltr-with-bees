@@ -1,0 +1,9 @@
+[
+  {
+    "name" : "logFollowersCount",
+    "class" : "org.apache.solr.ltr.feature.SolrFeature",
+    "params" : {
+      "q" : "{!func}log(followers_count)"
+    }
+  }
+]

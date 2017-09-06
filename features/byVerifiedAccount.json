@@ -1,0 +1,9 @@
+[
+  {
+    "name" : "byVerifiedAccount",
+    "class" : "org.apache.solr.ltr.feature.FieldValueFeature",
+    "params" : {
+      "field" : "verified_account"
+    }
+  }
+]

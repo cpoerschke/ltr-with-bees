@@ -1,0 +1,9 @@
+[
+  {
+    "name" : "hashtagCount",
+    "class" : "org.apache.solr.ltr.feature.FieldLengthFeature",
+    "params" : {
+      "field" : "hashtag"
+    }
+  }
+]

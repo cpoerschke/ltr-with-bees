@@ -1,0 +1,9 @@
+[
+  {
+    "name" : "mentionCount",
+    "class" : "org.apache.solr.ltr.feature.FieldLengthFeature",
+    "params" : {
+      "field" : "mention"
+    }
+  }
+]

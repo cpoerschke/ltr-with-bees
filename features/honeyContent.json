@@ -1,0 +1,9 @@
+[
+  {
+    "name" : "honeyContent",
+    "class" : "org.apache.solr.ltr.feature.SolrFeature",
+    "params" : {
+      "q" : "tweet:honey"
+    }
+  }
+]

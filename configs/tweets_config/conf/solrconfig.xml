@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+
+  This file is a minimal demo configuration. For comprehensive information about solrconfig.xml please refer to
+  http://lucene.apache.org/solr/guide/6_6/configuring-solrconfig-xml.html
+  and the well-commented example files in the server/solr/configsets directories.
+
+-->
+<config>
+
+  <luceneMatchVersion>6.6.0</luceneMatchVersion>
+
+  <lib dir="${solr.install.dir:../../../..}/dist/" regex="solr-ltr-\d.*\.jar" />
+  
+  <dataDir>${solr.data.dir:}</dataDir>
+
+  <directoryFactory name="DirectoryFactory" 
+                    class="${solr.directoryFactory:solr.NRTCachingDirectoryFactory}"/>
+
+  <codecFactory class="solr.SchemaCodecFactory"/>
+
+  <updateHandler class="solr.DirectUpdateHandler2"/>
+  
+  <query>
+    <cache name="QUERY_DOC_FV"
+           class="solr.search.LRUCache"
+           size="4096"
+           initialSize="2048"
+           autowarmCount="4096"
+           regenerator="solr.search.NoOpRegenerator" />
+  </query>
+
+  <requestHandler name="/select" class="solr.SearchHandler">
+    <lst name="defaults">
+      <str name="wt">json</str>
+      <str name="indent">on</str>
+    </lst>
+  </requestHandler>
+
+  <queryParser name="ltr" class="org.apache.solr.ltr.search.LTRQParserPlugin"/>
+
+  <transformer name="fv" class="org.apache.solr.ltr.response.transform.LTRFeatureLoggerTransformerFactory">
+    <str name="fvCacheName">QUERY_DOC_FV</str>
+    <str name="csvKeyValueDelimiter">:</str>
+    <str name="csvFeatureSeparator"> </str>
+  </transformer>
+
+  <queryResponseWriter name="xslt" class="solr.XSLTResponseWriter"/>
+
+  <requestHandler name="/select_tr" class="solr.SearchHandler">
+    <lst name="invariants">
+      <str name="wt">xslt</str>
+      <str name="indent">on</str>
+      <str name="tr">example.xsl</str>
+    </lst>
+    <lst name="defaults">
+      <str name="fl">id,tweet_url:source,embedded_tweet:source,score</str>
+    </lst>
+  </requestHandler>
+
+</config>

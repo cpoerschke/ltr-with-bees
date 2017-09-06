@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+
+  This file is a minimal demo schema. For comprehensive information about solr schemas please refer to
+  http://lucene.apache.org/solr/guide/6_6/documents-fields-and-schema-design.html
+  in the Solr Reference Guide.
+
+-->
+<schema name="example" version="1.6">
+
+  <fieldType name="datetime" class="solr.TrieDateField" />
+  <fieldType name="string"  class="solr.StrField" />
+  <fieldType name="text_ws" class="solr.TextField">
+    <analyzer>
+      <tokenizer class="solr.StandardTokenizerFactory"/>
+      <filter class="solr.LowerCaseFilterFactory"/>
+    </analyzer>
+  </fieldType>
+  <fieldType name="boolean" class="solr.BoolField" />
+  <fieldType name="handle2float" keyField="handle" defVal="0" class="solr.ExternalFileField" valType="float" />
+
+  <field name="created_at"       type="datetime" required="true" />
+  <field name="id"               type="string"   required="true" />
+  <field name="source"           type="string"   required="true" />
+  <field name="retweet_source"   type="string"   required="false" />
+  <field name="handle"           type="string"   required="true" />
+  <field name="handle_name"      type="text_ws"  required="true" />
+  <field name="tweet"            type="text_ws"  required="true" />
+  <field name="mention"          type="text_ws"  required="false" />
+  <field name="hashtag"          type="text_ws"  required="false" />
+  <field name="verified_account" type="boolean"  required="true" default="false" />
+  <field name="followers_count"  type="handle2float" />
+  <field name="following_count"  type="handle2float" />
+
+  <uniqueKey>id</uniqueKey>
+
+</schema>

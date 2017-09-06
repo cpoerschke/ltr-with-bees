@@ -1,0 +1,9 @@
+[
+  {
+    "name" : "fromDesktop",
+    "class" : "org.apache.solr.ltr.feature.ValueFeature",
+    "params" : {
+      "value" : "${from_desktop:0}"
+    }
+  }
+]

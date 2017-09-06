@@ -1,0 +1,9 @@
+[
+  {
+    "name" : "tweetLength",
+    "class" : "org.apache.solr.ltr.feature.FieldLengthFeature",
+    "params" : {
+      "field" : "tweet"
+    }
+  }
+]

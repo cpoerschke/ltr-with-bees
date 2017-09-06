@@ -1,0 +1,9 @@
+[
+  {
+    "name" : "fromMobile",
+    "class" : "org.apache.solr.ltr.feature.ValueFeature",
+    "params" : {
+      "value" : "${from_mobile:0}"
+    }
+  }
+]

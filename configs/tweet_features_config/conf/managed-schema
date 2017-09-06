@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+
+  This file is a minimal demo schema. For comprehensive information about solr schemas please refer to
+  http://lucene.apache.org/solr/guide/6_6/documents-fields-and-schema-design.html
+  in the Solr Reference Guide.
+
+-->
+<schema name="example" version="1.6">
+
+  <fieldType name="string" class="solr.StrField" />
+  <fieldType name="float"  class="solr.TrieFloatField" />
+
+  <field name="query_id"     type="string" required="true" />
+  <field name="result_id"    type="string" required="true" />
+  <field name="features"     type="string" required="true" />
+  <field name="result_score" type="float"  required="true" />
+
+</schema>

@@ -1,0 +1,8 @@
+[
+  {
+    "name" : "originalScore",
+    "class" : "org.apache.solr.ltr.feature.OriginalScoreFeature",
+    "params" : {
+    }
+  }
+]
