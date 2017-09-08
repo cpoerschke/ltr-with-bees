@@ -19,7 +19,7 @@
 
 <!-- 
   Simple transform of Solr query results to HTML
-  (Based on the example.xsl shipped with Apache Solr 6.6.0 release.)
+  (Based on the example.xsl shipped with Apache Solr 6.6.1 release.)
  -->
 <xsl:stylesheet version='1.0'
     xmlns:xsl='http://www.w3.org/1999/XSL/Transform'

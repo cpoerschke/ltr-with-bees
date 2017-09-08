@@ -8,7 +8,7 @@
 -->
 <config>
 
-  <luceneMatchVersion>6.6.0</luceneMatchVersion>
+  <luceneMatchVersion>6.6.1</luceneMatchVersion>
 
   <lib dir="${solr.install.dir:../../../..}/dist/" regex="solr-ltr-\d.*\.jar" />
   
