@@ -31,14 +31,14 @@ do
     continue
   fi
   echo_f "Deleting ${collection} collection (if it still exists)"
-  solr-6.6.1/bin/solr delete -c ${collection}
+  solr-7.0.0/bin/solr delete -c ${collection}
 done
 
 echo_f "Stopping solr (if it's still running)"
-solr-6.6.1/bin/solr stop
+solr-7.0.0/bin/solr stop
 
 echo_f "Starting solr"
-solr-6.6.1/bin/solr start
+solr-7.0.0/bin/solr start
 
 for collection in tweets tweet_features tweet_clicks
 do
@@ -47,7 +47,7 @@ do
     continue
   fi
   echo_f "Creating ${collection} collection using configs/${collection}_config config"
-  solr-6.6.1/bin/solr create_core -c ${collection} -d configs/${collection}_config
+  solr-7.0.0/bin/solr create_core -c ${collection} -d configs/${collection}_config
 done
 
 echo_f "Indexing demo tweets into Solr"
@@ -59,7 +59,7 @@ echo_f "Gathering external file field values"
 echo_f "Updating external file field values"
 for field in followers_count following_count
 do
-  dst="solr-6.6.1/server/solr/tweets/data/"
+  dst="solr-7.0.0/server/solr/tweets/data/"
   for file in `\ls -t external/external_${field}.* | head -1`
   do
     echo "Copying $file to $dst"
@@ -68,7 +68,7 @@ do
 done
 
 echo_f "Restarting solr (simpler to demo than ExternalFileFieldReloader config and use)"
-solr-6.6.1/bin/solr restart
+solr-7.0.0/bin/solr restart
 
 echo_f "TODO: 'sleep 5' should not be needed here?"
 sleep 5
@@ -180,7 +180,7 @@ curl --silent -XPUT 'http://localhost:8983/solr/tweets/schema/model-store' --dat
 search_and_rerank_f $TREES_MODEL_NAME
 
 echo_f "optional: command for stopping solr"
-echo "solr-6.6.1/bin/solr stop"
+echo "solr-7.0.0/bin/solr stop"
 
 if [[ -n "$API_TWITTER_ACCESS_TOKEN" ]]
 then

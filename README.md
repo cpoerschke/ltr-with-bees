@@ -3,6 +3,8 @@
 
 This repo contains the example material of my [talk](http://sched.co/BAwI) at [Lucene/Solr Revolution](http://lucenerevolution.org) 2017.
 
+_(Now updated to use the Solr 7.0.0 release. The original example material remains available on the [branch_6_6_1](https://github.com/cpoerschke/ltr-with-bees/tree/branch_6_6_1) branch.)_
+
 * [Setup](#setup)
 * [Using the demo script](#using-the-demo-script)
 * [The python scripts in this repo](#the-python-scripts-in-this-repo)
@@ -13,7 +15,7 @@ This repo contains the example material of my [talk](http://sched.co/BAwI) at [L
 
 This demo material for Solr's Learning-to-Rank plugin uses
 * the files in this repository
-* [Apache Solr](http://lucene.apache.org/solr) 6.6.1
+* [Apache Solr](http://lucene.apache.org/solr) 7.0.0
 * selected [Twitter REST APIs](https://dev.twitter.com/rest/public)
 * [LIBLINEAR](https://www.csie.ntu.edu.tw/~cjlin/liblinear/) 2.11
 * [RankLib](https://sourceforge.net/p/lemur/wiki/RankLib/) 2.8
@@ -28,9 +30,9 @@ cd ltr-with-bees
 ### Downloading Apache Solr
 
 ```
-# Download solr-6.6.1.tgz from http://lucene.apache.org/solr/mirrors-solr-latest-redir.html
-gunzip solr-6.6.1.tgz
-tar xf solr-6.6.1.tar
+# Download solr-7.0.0.tgz from http://lucene.apache.org/solr/mirrors-solr-latest-redir.html
+gunzip solr-7.0.0.tgz
+tar xf solr-7.0.0.tar
 ```
 
 ### Downloading LIBLINEAR
@@ -248,7 +250,7 @@ or the shorter equivalent _with_ re-ranking
 
 ### Demo config limitations and shortcuts
 
-* solr-6.6.1 release: The example configs shipped with Solr 6.6.1 are fully fledged and you can fully use the Solr Admin UI to explore and work with them. The downside of fully fledged is that most `solrconfig.xml` and `managed-schema` examples are 1000+ lines long.
+* solr-7.0.0 release: The example configs shipped with Solr 7.0.0 are fully fledged and you can fully use the Solr Admin UI to explore and work with them. The downside of fully fledged is that most `solrconfig.xml` and `managed-schema` examples are 1000+ lines long.
 
 * ltr-with-bees repo:
  * The [demo configs](configs) in this repo contain `solrconfig.xml` and `managed-schema` files which are minimally short, only a few dozen lines long. The upside of this conciseness is that you can easily see the things configured for the demo. The downside of this brevity is that certain parts of the Solr Admin UI cannot be used with the demo configs.

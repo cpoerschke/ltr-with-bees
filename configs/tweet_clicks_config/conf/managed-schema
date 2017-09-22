@@ -9,7 +9,7 @@
 <schema name="example" version="1.6">
 
   <fieldType name="string"   class="solr.StrField" />
-  <fieldType name="datetime" class="solr.TrieDateField" />
+  <fieldType name="datetime" class="solr.DatePointField" />
 
   <field name="query_id"      type="string"   required="true" />
   <field name="result_id"     type="string"   required="true" />

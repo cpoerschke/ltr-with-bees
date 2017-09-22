@@ -8,7 +8,7 @@
 -->
 <config>
 
-  <luceneMatchVersion>6.6.1</luceneMatchVersion>
+  <luceneMatchVersion>7.0.0</luceneMatchVersion>
 
   <dataDir>${solr.data.dir:}</dataDir>
 

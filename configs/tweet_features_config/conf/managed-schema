@@ -9,7 +9,7 @@
 <schema name="example" version="1.6">
 
   <fieldType name="string" class="solr.StrField" />
-  <fieldType name="float"  class="solr.TrieFloatField" />
+  <fieldType name="float"  class="solr.FloatPointField" />
 
   <field name="query_id"     type="string" required="true" />
   <field name="result_id"    type="string" required="true" />

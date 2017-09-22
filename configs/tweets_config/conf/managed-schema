@@ -8,7 +8,7 @@
 -->
 <schema name="example" version="1.6">
 
-  <fieldType name="datetime" class="solr.TrieDateField" />
+  <fieldType name="datetime" class="solr.DatePointField" />
   <fieldType name="string"  class="solr.StrField" />
   <fieldType name="text_ws" class="solr.TextField">
     <analyzer>
@@ -17,7 +17,7 @@
     </analyzer>
   </fieldType>
   <fieldType name="boolean" class="solr.BoolField" />
-  <fieldType name="handle2float" keyField="handle" defVal="0" class="solr.ExternalFileField" valType="float" />
+  <fieldType name="handle2float" keyField="handle" defVal="0" class="solr.ExternalFileField" />
 
   <field name="created_at"       type="datetime" required="true" />
   <field name="id"               type="string"   required="true" />
